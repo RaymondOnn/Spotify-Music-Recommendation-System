@@ -3,32 +3,31 @@
 ##  Executive Summary
 On any given day, the average individual makes a range of conscious decisions about their media consumption. As we navigate through these countless choices, recommendation system algorithms such as collaborative filtering, utilize historical behavioral data patterns, to allow users to find relevant and enjoyable content, thereby increasing user satisfaction and driving engagement for a given product or service. 
 
-However, in some cases, prior behavioral or user data is not available and collaborative filtering methods are no longer viable. Such situations are common in the early phases of startups in the media streaming space. With this in mind, I sought to build a content-based recommendation system and look at different NLP techniques such as TD-IDF and Word2Vec can help enhance its performance
+However, in some cases, prior behavioral or user data is not available and collaborative filtering methods are no longer viable. Such situations are common in the early phases of startups in the media streaming space. With this in mind, I sought to build a content-based recommendation system and explored with different NLP techniques such as TD-IDF and Word2Vec to help enhance its performance
 
 ##  Problem Statement
 This project seeks to explore better ways of boosting music discovery especially for brand new artists or old or unpopular music, given the absence of prior behavioral or user data.
 Such recommendation systems will be useful in the early phases of a startup when it is still establishing its own user base. 
 
 ## Technical Goals
-1. Utilize Airflow and Docker in the data collection Phase
-2. Familiarise oneself with Google Cloud
+1. Learn to use Airflow and Docker in the data collection phase
+2. Familiarise oneself with Google Cloud API
 3. Explore the different ways content-based recommendation systems can be built
-4. Develop a demo app using Streamlit
+4. Learn to implement Word2Vec embeddings
+5. Develop a demo app using Streamlit
  
 ## Dataset
-* The dataset consists of the song search results of each year, from 1930 - 2020  (1000 tracks per year).
+* The dataset consists of the songs released between 1930 and 2020  (1000 tracks per year).
 * This data collection process was triggered automatically every 5 mins using **Airflow**, which was running in a **Docker** container
-* In each cycle, song search results of a particular year was scraped from the Spotify API using the spotipy library.
-* After some initial data transformation, the data was stored as csv files in **Google Cloud Storage** and loaded into **BigQuery**
+* In each cycle, attributes of songs released in a particular year was scraped from Spotify'S Search API via the spotipy library.
+* After some initial data transformation, the data was stored as csv files in **Google Cloud Storage** and then loaded into **BigQuery**
 * After data cleaning, we are left with 74.030 rows
-[here](https://reddit.zendesk.com/hc/en-us/articles/360043034132-What-are-awards-and-how-do-I-give-them-)| 
-
 
 ### Data Dictionary
 * Dataset consists of 21 columns
 
 |Feature|Type|Description|
-|---|---|---|---|
+|---|---|---|
 |artist_id|text| The id of the artist| 
 |artist_name|text| The name of the artist|
 |id|text| The id of the track| 
@@ -55,19 +54,21 @@ Such recommendation systems will be useful in the early phases of a startup when
 
 ##  Preprocessing
 
-Before calculating similarity metrics, data was preprocessed through the following pipeline:
+Before calculating similarity scores, here are the steps done to preprocess the data:
 
 -   Dropping of unnecessary features
 -   Feature engineering i.e. grouping of years in groups of 5
 -   Normalization (Minmax Scaling) on float features
--   Dummy columns created for popularity and period
+-   One hot Encoding for popularity and period
 - With the 'genre' column, 2 different vectorization methods were used, **TF-IDF** and **Word2Vec**
 
-Multiple similarity matrixes were then calculated separately using cosine similarity and then consolidated using the weighted approach
+Multiple sets of similarity scores were then calculated separately using cosine similarity and then consolidated using the weighted approach
 
 
 ## Conclusion & Next Steps
-Content-based recommendation using Spotify track attribute is generally effective at creating good song recommendations and increasing music discovery
-1. **Greater volume of  data**: Allows recommendation systems greater flexibility when recommending songs
-2.  **Different types of data**: For e.g With playlist data, we can use song embeddings to allow recommendation systems to understand context when recommending songs, For example, to make a "soft rock" playlist
-3. **User Data**: Incorporate user data such as prior usage patterns and user feedback would help customize recommendation to suit user preferences better
+Content-based recommendation using Spotify track attributes is generally effective at creating good song recommendations and increasing music discovery
+
+However, there is definiely scope to improve its performance.
+1. **Greater volume of  data**: Larger song database would allows recommendation systems to pick and choose more similar songs
+2.  **Different types of data**: With playlist data, we can use song embeddings to allow recommendation systems to understand context when recommending songs, For example, to make a "soft rock" playlist
+3. **User Data**: Incorporate user data such as prior usage patterns and user feedback would help customize recommendations to suit user preferences better
