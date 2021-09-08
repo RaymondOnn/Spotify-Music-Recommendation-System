@@ -52,13 +52,13 @@ Such recommendation systems will be useful in the early phases of a startup when
 
 ## Finding
 How has music tastes changed over the years?
-![](images/audio_feat X year.jpg)
+![](/images/audio_feat X year.jpg)
 
-![](images/song_feat X year 1.jpg)
+![](/images/song_feat X year 1.jpg)
 
-![](images/song_feat X year 2.jpg)
+![](/images/song_feat X year 2.jpg)
 What makes a song popular?
-![](images/audio_feat X popularity.jpg)
+![](/images/audio_feat X popularity.jpg)
 
 ##  Preprocessing
 
