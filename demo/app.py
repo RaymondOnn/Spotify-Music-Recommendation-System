@@ -268,7 +268,7 @@ with st.container():
         # Display Preview of selected track
         col1, col2 = st.columns([1, 3])
         components.html( html_string,height=380)  
-        col2.write('Song Stats')    
+        #col2.write('Song Stats')    
         v_spacer(obj=st,height=1)
         
     else:
@@ -353,7 +353,7 @@ with st.container():
         st.write('')
 
 
-with st.container():  
-    with st.expander('Session Stats'):
-        st.write( st.session_state)
+# with st.container():  
+#     with st.expander('Session Stats'):
+#         st.write( st.session_state)
 

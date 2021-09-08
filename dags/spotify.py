@@ -9,8 +9,7 @@ from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQue
 from airflow.providers.google.cloud.hooks.gcs import GCSHook
 from airflow.contrib.hooks.bigquery_hook import BigQueryHook
 
-CLIENT_ID = '6fe3c874d63e409788801c7056db56f3'
-CLIENT_SECRET = 'be2c76aa3c8f4e269ccc982a1b81b112'
+
 auth_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 sp = spotipy.Spotify(auth_manager=auth_manager)
 
