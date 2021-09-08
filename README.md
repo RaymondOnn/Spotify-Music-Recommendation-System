@@ -50,7 +50,15 @@ Such recommendation systems will be useful in the early phases of a startup when
 |valence|float| the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).| 
 |tempo|float| The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece, and derives directly from the average beat duration.|  
 
+## Finding
+How has music tastes changed over the years?
+![](images/audio_feat X year.jpg)
 
+![](images/song_feat X year 1.jpg)
+
+![](images/song_feat X year 2.jpg)
+What makes a song popular?
+![](images/audio_feat X popularity.jpg)
 
 ##  Preprocessing
 
