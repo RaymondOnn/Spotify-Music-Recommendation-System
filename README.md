@@ -68,7 +68,7 @@ Multiple sets of similarity scores were then calculated separately using cosine 
 ## Conclusion & Next Steps
 Content-based recommendation using Spotify track attributes is generally effective at creating good song recommendations and increasing music discovery
 
-However, there is definiely scope to improve its performance.
-1. **Greater volume of  data**: Larger song database would allows recommendation systems to pick and choose more similar songs
-2.  **Different types of data**: With playlist data, we can use song embeddings to allow recommendation systems to understand context when recommending songs, For example, to make a "soft rock" playlist
+However, there is definitely scope to improve its performance:
+1. **Greater volume of  data**: Larger song database would allows the recommendation system to pick and choose songs that are more similar.
+2.  **Different types of data**: With playlist data, we can use song embeddings to train recommendation systems to understand context when recommending songs, For example, to make a "soft pop rock" playlist
 3. **User Data**: Incorporate user data such as prior usage patterns and user feedback would help customize recommendations to suit user preferences better
